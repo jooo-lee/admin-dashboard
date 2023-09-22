@@ -1,3 +1,10 @@
+:root {
+    --search-bar-height: 2.5rem;
+    --user-icon-height: 1.7rem;
+    --bell-icon-height: 1.2rem;
+    --hamburger-menu-height: 1.3rem;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -89,14 +96,15 @@
 }
 
 #search {
-    height: 2.5rem;
-    text-indent: 2.5rem;
-    font-size: 1.1rem;
+    height: var(--search-bar-height);
+    font-size: 1rem;
+    padding-left: var(--search-bar-height);
+    padding-right: calc(var(--search-bar-height) * 2);
 }
 
 #hamburger-menu {
     position: absolute;
-    height: 1.3rem;
+    height: var(--hamburger-menu-height);
 
     /* top: 0 and bottom: 0 sets boundaries,
     margin-top: auto and margin-bottom: auto
@@ -104,12 +112,12 @@
     boundaries */
     top: 0;
     bottom: 0; 
-    margin: auto 0 auto calc((2.5rem - 1.3rem) / 2); 
+    margin: auto 0 auto calc((var(--search-bar-height) - var(--hamburger-menu-height)) / 2); 
 }
 
 #bell {
     position: absolute;
-    height: 1.2rem;
+    height: var(--bell-icon-height);
     top: 0;
     bottom: 0;
     right: 0; /* Positions element on right */
@@ -119,8 +127,8 @@
 #current-user-icon {
     border-radius: 50%;
     position: absolute;
-    height: 1.7rem;
-    width: 1.7rem;
+    height: var(--user-icon-height);
+    width: var(--user-icon-height);
     top: 0;
     bottom: 0;
     right: 0;
