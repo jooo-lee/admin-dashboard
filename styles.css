@@ -3,6 +3,7 @@
     --user-icon-height: 1.7rem;
     --bell-icon-height: 1.2rem;
     --hamburger-menu-height: 1.3rem;
+    --main-content-left-spacing: 7.5vw;
 }
 
 * {
@@ -92,11 +93,12 @@
 #search-container {
     position: relative;
     display: grid;
-    width: 85vw;
+    width: calc(100vw - (var(--main-content-left-spacing)) * 2);
 }
 
 #search {
     height: var(--search-bar-height);
+    min-width: 0; /* Fixes overflow for < 300px width screens */
     font-size: 1rem;
     padding-left: var(--search-bar-height);
     padding-right: calc(var(--search-bar-height) * 2);
@@ -133,4 +135,23 @@
     bottom: 0;
     right: 0;
     margin: auto 8px auto 0;
+}
+
+#main-content {
+    margin: 16px var(--main-content-left-spacing) 16px;
+}
+
+.section-title {
+    margin-bottom: 16px;
+}
+
+#project-cards {
+    display: grid;
+    gap: 2rem;
+    grid-template-rows: repeat(6, 12rem);
+}
+
+.card {
+    border: 1px solid #000;
+    border-radius: 5px;
 }
