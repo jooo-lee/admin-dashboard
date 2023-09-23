@@ -12,6 +12,8 @@
     box-sizing: border-box;
 }
 
+/* ------------------------------Side Nav------------------------------ */
+
 #side-nav {
     height: 100%;
     width: 0;
@@ -21,7 +23,7 @@
     left: 0;
     background-color: #9ca3af;
     overflow-x: hidden;
-    transition: 0.5s linear;
+    transition: 0.5s;
 
     display: grid;
     grid-template-columns: 70px auto 1fr;
@@ -89,6 +91,8 @@
     margin-bottom: 20px;
 }
 
+/* ------------------------------Header------------------------------ */
+
 #header {
     display: grid;
     justify-content: center;
@@ -142,13 +146,22 @@
     margin: auto 8px auto 0;
 }
 
+/* ------------------------------Main Content------------------------------ */
+
 #main-content {
     margin: 16px var(--main-content-left-spacing) 16px;
 }
 
+.main-content-section {
+    margin-bottom: 20px;
+}
+
 .section-title {
+    font-size: 1.5rem;
     margin-bottom: 16px;
 }
+
+/* ------------------------------Projects------------------------------ */
 
 #project-cards {
     display: grid;
@@ -179,4 +192,26 @@
 
 .card-icons img {
     height: 1.5rem;
+}
+
+/* ------------------------------Announcements------------------------------ */
+
+#announcements-card {
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 15px 20px;
+}
+
+#announcements-card div:nth-child(2) {
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+
+.announcement-section {
+    padding: 15px 0;
+}
+
+.announcement-title {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
 }
