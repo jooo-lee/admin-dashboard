@@ -21,7 +21,7 @@
     left: 0;
     background-color: #9ca3af;
     overflow-x: hidden;
-    transition: 0.5s;
+    transition: 0.5s linear;
 
     display: grid;
     grid-template-columns: 70px auto 1fr;
@@ -82,6 +82,11 @@
 /* Create divide between side nav row sections */
 .settings {
     margin-top: 50px;
+}
+
+/* Add space between last side nav row and bottom of page */
+#side-nav a:nth-last-child(-n + 2) {
+    margin-bottom: 20px;
 }
 
 #header {
