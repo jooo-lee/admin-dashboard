@@ -6,7 +6,7 @@
     --background-color: #E4E4E4;
 
     --search-bar-height: 2.5rem;
-    --hamburger-menu-height: 1.3rem;
+    --hamburger-menu-height: 2.5rem;
     --main-content-left-padding: 7.5vw;
     --border-radius: 5px;
 }
@@ -38,11 +38,10 @@
 }
 
 #close-btn {
-    height: 1.5rem;
+    height: 2.5rem;
+    padding: 8px;
     place-self: start end;
     grid-column: 3 / 4;
-    margin-top: 15px;
-    margin-right: 15px;
 }
 
 #side-nav a {
@@ -124,6 +123,7 @@
 #hamburger-menu {
     position: absolute;
     height: var(--hamburger-menu-height);
+    padding: 8px;
 
     /* top: 0 and bottom: 0 sets boundaries,
     margin-top: auto and margin-bottom: auto
