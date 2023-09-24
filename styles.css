@@ -170,7 +170,7 @@
     grid-template-rows: repeat(6, 1fr);
 }
 
-.card {
+.project-card {
     border: 1px solid #000;
     border-radius: 5px;
     display: grid;
@@ -178,12 +178,12 @@
     padding: 30px 20px;
 }
 
-.card-title {
+.project-title {
     margin-bottom: 10px;
     font-size: 1.1rem;
 }
 
-.card-icons {
+.project-card-icons {
     place-self: end;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -191,7 +191,7 @@
     margin-top: 15px;
 }
 
-.card-icons img {
+.project-card-icons img {
     height: 1.5rem;
 }
 
