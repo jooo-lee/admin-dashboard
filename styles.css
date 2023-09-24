@@ -1,7 +1,14 @@
 :root {
+    /* Colours */
+    --main-color: #FFB929;
+    --accent-color: #800080;
+    --card-color: white;
+    --background-color: #E4E4E4;
+
     --search-bar-height: 2.5rem;
     --hamburger-menu-height: 1.3rem;
-    --main-content-left-margin: 7.5vw;
+    --main-content-left-padding: 7.5vw;
+    --border-radius: 5px;
 }
 
 * {
@@ -19,7 +26,7 @@
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #9ca3af;
+    background-color: var(--main-color);
     overflow-x: hidden;
     transition: 0.5s;
 
@@ -94,16 +101,19 @@
 #header {
     display: grid;
     justify-content: center;
-    margin-top: 20px;
+    padding: 20px 0 20px;
+    background-color: var(--background-color);
 }
 
 #search-container {
     position: relative;
     display: grid;
-    width: calc(100vw - (var(--main-content-left-margin)) * 2);
+    width: calc(100vw - (var(--main-content-left-padding)) * 2);
 }
 
 #search {
+    border: none;
+    border-radius: var(--border-radius);
     height: var(--search-bar-height);
     min-width: 0; /* Fixes overflow for < 300px width screens */
     font-size: 1rem;
@@ -148,7 +158,8 @@
 /* ------------------------------Main Content------------------------------ */
 
 #main-content {
-    margin: 16px var(--main-content-left-margin) 16px;
+    padding: 16px var(--main-content-left-padding) 16px;
+    background-color: var(--background-color);
 }
 
 .main-content-section {
@@ -169,11 +180,12 @@
 }
 
 .project-card {
-    border: 1px solid #000;
-    border-radius: 5px;
+    border-left: 8px solid var(--accent-color);
+    border-radius: var(--border-radius);
     display: grid;
     grid-template-rows: auto 1fr auto;
     padding: 30px 20px;
+    background-color: var(--card-color);
 }
 
 .project-title {
@@ -196,9 +208,9 @@
 /* ------------------------------Announcements------------------------------ */
 
 #announcements-card {
-    border: 1px solid #000;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     padding: 15px 20px;
+    background-color: var(--card-color);
 }
 
 /* Add lines between announcements */
@@ -219,11 +231,11 @@
 /* ------------------------------Trending------------------------------ */
 
 #trending-card {
-    border: 1px solid #000;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     padding: 30px 30px;
     display: grid;
     gap: 20px;
+    background-color: var(--card-color);
 }
 
 .trending-section {
