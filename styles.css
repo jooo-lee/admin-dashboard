@@ -136,6 +136,7 @@
 }
 
 #current-user-icon {
+    object-fit: cover;
     border-radius: 50%;
     position: absolute;
     height: var(--user-icon-height);
@@ -202,6 +203,7 @@
     padding: 15px 20px;
 }
 
+/* Add lines between announcements */
 #announcements-card div:nth-child(2) {
     border-top: 1px solid #000;
     border-bottom: 1px solid #000;
@@ -214,4 +216,33 @@
 .announcement-title {
     font-size: 1.1rem;
     margin-bottom: 5px;
+}
+
+/* ------------------------------Trending------------------------------ */
+
+#trending-card {
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 30px 30px;
+    display: grid;
+    gap: 20px;
+}
+
+.trending-section {
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+.trending-section img {
+    object-fit: cover; /* Clip images to maintain aspect ratio */
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.trending-bio {
+    display: grid;
+    align-content: center;
+    grid-template-rows: repeat(2, min-content);
 }
