@@ -1,9 +1,7 @@
 :root {
     --search-bar-height: 2.5rem;
-    --user-icon-height: 1.7rem;
-    --bell-icon-height: 1.2rem;
     --hamburger-menu-height: 1.3rem;
-    --main-content-left-spacing: 7.5vw;
+    --main-content-left-margin: 7.5vw;
 }
 
 * {
@@ -102,7 +100,7 @@
 #search-container {
     position: relative;
     display: grid;
-    width: calc(100vw - (var(--main-content-left-spacing)) * 2);
+    width: calc(100vw - (var(--main-content-left-margin)) * 2);
 }
 
 #search {
@@ -128,7 +126,7 @@
 
 #bell {
     position: absolute;
-    height: var(--bell-icon-height);
+    height: 1.2rem;
     top: 0;
     bottom: 0;
     right: 0; /* Positions element on right */
@@ -139,8 +137,8 @@
     object-fit: cover;
     border-radius: 50%;
     position: absolute;
-    height: var(--user-icon-height);
-    width: var(--user-icon-height);
+    height: 1.7rem;
+    width: 1.7rem;
     top: 0;
     bottom: 0;
     right: 0;
@@ -150,7 +148,7 @@
 /* ------------------------------Main Content------------------------------ */
 
 #main-content {
-    margin: 16px var(--main-content-left-spacing) 16px;
+    margin: 16px var(--main-content-left-margin) 16px;
 }
 
 .main-content-section {
