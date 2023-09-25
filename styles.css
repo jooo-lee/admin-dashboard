@@ -8,7 +8,6 @@
     --card-text-color: #636363;
 
     --search-bar-height: 2.5rem;
-    --hamburger-menu-height: 2.5rem;
     --main-content-left-padding: 7.5vw;
     --border-radius: 5px;
 }
@@ -127,39 +126,42 @@
     padding-right: calc(var(--search-bar-height) * 2);
 }
 
-#hamburger-menu {
+/* Search bar icons anchor tags */
+#open-side-nav,
+#open-notifications,
+#open-profile {
     position: absolute;
-    height: var(--hamburger-menu-height);
-    padding: 8px;
+    height: var(--search-bar-height);
+    width: var(--search-bar-height);
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
 
-    /* top: 0 and bottom: 0 sets boundaries,
-    margin-top: auto and margin-bottom: auto
-    vertically centers the element within those 
-    boundaries */
-    top: 0;
-    bottom: 0; 
-    margin: auto 0 auto calc((var(--search-bar-height) - var(--hamburger-menu-height)) / 2); 
+/* Search bar right side icons anchor tags */
+#open-notifications, 
+#open-profile {
+    right: 0; /* Positions element on right */
+}
+
+/* Anchor tag containing bell icon */
+#open-notifications {
+    margin-right: var(--search-bar-height);
+}
+
+#hamburger-menu {
+    height: 1.5rem;
 }
 
 #bell {
-    position: absolute;
     height: 1.2rem;
-    top: 0;
-    bottom: 0;
-    right: 0; /* Positions element on right */
-    margin: auto 48px auto 0;
 }
 
 #current-user-icon {
     object-fit: cover;
     border-radius: 50%;
-    position: absolute;
     height: 1.7rem;
     width: 1.7rem;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    margin: auto 8px auto 0;
 }
 
 /* ------------------------------Main Content------------------------------ */
