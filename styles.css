@@ -2,8 +2,10 @@
     /* Colours */
     --main-color: #FFB929;
     --accent-color: #800080;
-    --card-color: white;
     --background-color: #E4E4E4;
+    --card-background-color: white;
+    --card-heading-color: black;
+    --card-text-color: #636363;
 
     --search-bar-height: 2.5rem;
     --hamburger-menu-height: 2.5rem;
@@ -186,12 +188,14 @@
     display: grid;
     grid-template-rows: auto 1fr auto;
     padding: 30px 20px;
-    background-color: var(--card-color);
+    background-color: var(--card-background-color);
+    color: var(--card-text-color);
 }
 
 .project-title {
     margin-bottom: 10px;
     font-size: 1.1rem;
+    color: var(--card-heading-color);
 }
 
 .project-card-icons {
@@ -211,7 +215,8 @@
 #announcements-card {
     border-radius: var(--border-radius);
     padding: 15px 20px;
-    background-color: var(--card-color);
+    background-color: var(--card-background-color);
+    color: var(--card-text-color);
 }
 
 /* Add lines between announcements */
@@ -227,6 +232,7 @@
 .announcement-title {
     font-size: 1.1rem;
     margin-bottom: 10px;
+    color: var(--card-heading-color);
 }
 
 /* ------------------------------Trending------------------------------ */
@@ -236,7 +242,7 @@
     padding: 30px 30px;
     display: grid;
     gap: 20px;
-    background-color: var(--card-color);
+    background-color: var(--card-background-color);
 }
 
 .trending-section {
@@ -256,4 +262,8 @@
     display: grid;
     align-content: center;
     grid-template-rows: repeat(2, min-content);
+}
+
+.trending-bio p:nth-last-child(1){
+    color: var(--card-text-color);
 }
