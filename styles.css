@@ -266,15 +266,14 @@
 
 #trending-card {
     border-radius: var(--border-radius);
-    padding: 30px 30px;
-    display: grid;
-    gap: 20px;
     background-color: var(--card-background-color);
 }
 
 .trending-section {
     display: grid;
     grid-template-columns: auto 1fr;
+    text-decoration: none;
+    padding: 12px 16px;
 }
 
 .trending-section img {
@@ -291,6 +290,12 @@
     grid-template-rows: repeat(2, min-content);
 }
 
+/* User handle */
+.trending-bio p:nth-child(1) {
+    color: var(--card-heading-color);
+}
+
+/* User description */
 .trending-bio p:nth-last-child(1){
     color: var(--card-text-color);
 }
