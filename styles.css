@@ -15,6 +15,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
 }
 
 /* ------------------------------Side Nav------------------------------ */
@@ -163,7 +164,7 @@
 }
 
 .main-content-section {
-    margin-bottom: 20px;
+    margin-bottom: 36px;
 }
 
 .section-title {
@@ -225,7 +226,7 @@
 
 .announcement-title {
     font-size: 1.1rem;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 /* ------------------------------Trending------------------------------ */
