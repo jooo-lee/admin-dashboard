@@ -112,7 +112,7 @@
 
 #search-container {
     position: relative;
-    display: grid;
+    display: grid; /* Fit anchor tag to height of child */
     width: calc(100vw - (var(--main-content-left-padding)) * 2);
 }
 
@@ -245,8 +245,21 @@
 
 .announcement-title {
     font-size: 1.1rem;
+
+    /* Since anchor tags are inline elements,
+    we need to change its display to
+    block so that we can adjust its margins.
+    Then we need to adjust its width so that
+    it fits the content, since the block element
+    will expand to the full width of its parent
+    container */
+    display: block;
     margin-bottom: 10px;
+    width: fit-content;
+
     color: var(--card-heading-color);
+    text-decoration: none;
+    font-weight: bold;
 }
 
 /* ------------------------------Trending------------------------------ */
