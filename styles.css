@@ -40,11 +40,14 @@
     color: black;
 }
 
+#side-nav a:first-child {
+    width: fit-content;
+    place-self: start end;
+}
+
 #close-btn {
     height: 2.5rem;
     padding: 8px;
-    place-self: start end;
-    grid-column: 3 / 4;
 }
 
 #side-nav a {
@@ -61,7 +64,7 @@
 }
 
 /* Anchor tags containing side nav link text */
-#side-nav a:nth-of-type(even) {
+#side-nav a:nth-of-type(2n + 3) {
     width: fit-content;
 }
 
@@ -74,7 +77,8 @@
 }
 
 /* Dashboard title and icon anchor tags */
-#side-nav a:nth-of-type(-n + 2) {
+#side-nav a:nth-of-type(2),
+#side-nav a:nth-of-type(3) {
     grid-row: 1 / 2; /* Place on same row as close button */
     margin-top: 20px;
     margin-bottom: 20px;
