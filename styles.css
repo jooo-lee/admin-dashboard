@@ -202,6 +202,9 @@
     margin-bottom: 10px;
     font-size: 1.1rem;
     color: var(--card-heading-color);
+    text-decoration: none;
+    font-weight: bold;
+    width: fit-content;
 }
 
 .project-card-icons {
