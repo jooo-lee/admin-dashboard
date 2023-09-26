@@ -7,10 +7,11 @@
     --card-heading-color: black;
     --card-text-color: #636363;
 
+    --header-top-padding: 20px;
     --search-bar-height: 2.5rem;
     --main-content-left-padding: 7.5vw;
-    --border-radius: 5px;
-    --header-top-margin: 20px;
+    --square-border-radius: 5px;
+    --round-border-radius: 20px;
 }
 
 * {
@@ -111,20 +112,22 @@ body {
 #header {
     display: grid;
     justify-items: center;
-    margin: var(--header-top-margin) 0 var(--header-top-margin);
+    align-items: center;
+    padding: var(--header-top-padding) 0;
     position: relative;
     width: 100%;
 }
 
-/* Remove search icon and current user name on smaller screens */
+/* Remove elements on smaller screens */
 #send-search,
-#open-profile-name {
+#open-profile-name,
+#extra-header-section {
     display: none;
 }
 
 #search-bar {
     border: none;
-    border-radius: var(--border-radius);
+    border-radius: var(--square-border-radius);
     height: var(--search-bar-height);
     width: calc(100vw - (var(--main-content-left-padding)) * 2);
     min-width: 0; /* Fixes overflow for < 300px width screens */
@@ -147,7 +150,6 @@ body {
 
 /* Anchor tag containing hamburger menu icon */
 #open-side-nav {
-    top: 0;
     left: 0;
     margin-left: var(--main-content-left-padding);
 }
@@ -172,7 +174,7 @@ body {
     height: 1.2rem;
 }
 
-#current-user-icon {
+#current-user-icon-small {
     object-fit: cover;
     border-radius: 50%;
     height: 1.7rem;
@@ -208,7 +210,7 @@ body {
 
 .project-card {
     border-left: 8px solid var(--accent-color);
-    border-radius: var(--border-radius);
+    border-radius: var(--square-border-radius);
     display: grid;
     grid-template-rows: auto 1fr auto;
     padding: 30px 20px;
@@ -245,7 +247,7 @@ body {
 /* ------------------------------Announcements------------------------------ */
 
 #announcements-card {
-    border-radius: var(--border-radius);
+    border-radius: var(--square-border-radius);
     padding: 15px 20px;
     background-color: var(--card-background-color);
     color: var(--card-text-color);
@@ -283,7 +285,7 @@ body {
 /* ------------------------------Trending------------------------------ */
 
 #trending-card {
-    border-radius: var(--border-radius);
+    border-radius: var(--square-border-radius);
     background-color: var(--card-background-color);
 }
 
@@ -320,7 +322,7 @@ body {
 
 /* ------------------------------Larger Screens------------------------------ */
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 1000px) {
     #container {
         height: 100vh;
         display: grid;
@@ -344,6 +346,8 @@ body {
     /* Change header layout */
     #header {
         grid-template-columns: 70px 1fr 70px auto auto;
+        grid-template-rows: 1fr 2fr;
+        background-color: var(--card-background-color);
     }
 
     /* Make search icon visible */
@@ -361,6 +365,8 @@ body {
     #search-bar {
         width: 100%;
         padding: 0 8px 0 8px;
+        background-color: var(--background-color);
+        border-radius: var(--round-border-radius);
     }
 
     /* Hide hamburger menu */
@@ -374,7 +380,7 @@ body {
         position: relative;
     }
 
-    #current-user-icon {
+    #current-user-icon-small {
         height: 2.5rem;
         width: 2.5rem;
     }
@@ -382,11 +388,58 @@ body {
     /* Make current user name visible */
     #open-profile-name {
         display: grid;
-        align-content: center;
         text-decoration: none;
         color: var(--card-heading-color);
         font-size: 1.2rem;
         font-weight: bold;
         margin: 0 20px 0 10px;
+    }
+
+    /* Make extra section visible */
+    #extra-header-section {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        width: 100%;
+        margin-top: var(--header-top-padding);
+        padding: 0 20px;
+    }
+
+    #profile-and-greeting {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+    }
+
+    #current-user-icon-large {
+        object-fit: cover;
+        border-radius: 50%;
+        height: 4rem;
+        width: 4rem;
+        margin-right: 20px;
+    }
+
+    #greeting {
+        font-weight: bold;
+    }
+
+    #greeting :nth-child(2) {
+        font-size: 1.6rem;
+    }
+
+    #header-btns {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+        gap: 20px;
+    }
+
+    #header-btns button {
+        background-color: var(--main-color);
+        border: none;
+        border-radius: var(--round-border-radius);
+        height: fit-content;
+        padding: 12px 20px;
+        cursor: pointer;
     }
 }
