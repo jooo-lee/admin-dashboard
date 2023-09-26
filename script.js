@@ -1,4 +1,4 @@
-const hamburgerMenu = document.querySelector("#hamburger-menu");
+const hamburgerMenu = document.querySelector("#hamburger-menu-icon");
 const sideNav = document.querySelector("#side-nav");
 const closeBtn = document.querySelector("#close-btn");
 const body = document.querySelector("body");

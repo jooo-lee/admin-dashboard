@@ -10,6 +10,7 @@
     --search-bar-height: 2.5rem;
     --main-content-left-padding: 7.5vw;
     --border-radius: 5px;
+    --header-top-margin: 20px;
 }
 
 * {
@@ -17,6 +18,10 @@
     padding: 0;
     box-sizing: border-box;
     font-family: system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
 }
 
 /* ------------------------------Side Nav------------------------------ */
@@ -106,20 +111,22 @@
 #header {
     display: grid;
     justify-items: center;
-    padding: 20px 0 20px;
-    background-color: var(--background-color);
-}
-
-#search-container {
+    margin: var(--header-top-margin) 0 var(--header-top-margin);
     position: relative;
-    display: grid; /* Fit anchor tag to height of child */
-    width: calc(100vw - (var(--main-content-left-padding)) * 2);
+    width: 100%;
 }
 
-#search {
+/* Remove search icon and current user name on smaller screens */
+#send-search,
+#open-profile-name {
+    display: none;
+}
+
+#search-bar {
     border: none;
     border-radius: var(--border-radius);
     height: var(--search-bar-height);
+    width: calc(100vw - (var(--main-content-left-padding)) * 2);
     min-width: 0; /* Fixes overflow for < 300px width screens */
     font-size: 1rem;
     padding-left: var(--search-bar-height);
@@ -129,7 +136,7 @@
 /* Search bar icons anchor tags */
 #open-side-nav,
 #open-notifications,
-#open-profile {
+#open-profile-icon {
     position: absolute;
     height: var(--search-bar-height);
     width: var(--search-bar-height);
@@ -138,22 +145,30 @@
     align-content: center;
 }
 
-/* Search bar right side icons anchor tags */
-#open-notifications, 
-#open-profile {
+/* Anchor tag containing hamburger menu icon */
+#open-side-nav {
+    top: 0;
+    left: 0;
+    margin-left: var(--main-content-left-padding);
+}
+
+/* Anchor tag containing current user profile icon */
+#open-profile-icon {
     right: 0; /* Positions element on right */
+    margin-right: var(--main-content-left-padding);
 }
 
 /* Anchor tag containing bell icon */
 #open-notifications {
-    margin-right: var(--search-bar-height);
+    right: 0;
+    margin-right: calc(var(--main-content-left-padding) + var(--search-bar-height));
 }
 
-#hamburger-menu {
+#hamburger-menu-icon {
     height: 1.5rem;
 }
 
-#bell {
+#bell-icon {
     height: 1.2rem;
 }
 
@@ -168,7 +183,6 @@
 
 #main-content {
     padding: 16px var(--main-content-left-padding) 16px;
-    background-color: var(--background-color);
 }
 
 .main-content-section {
@@ -314,6 +328,8 @@
         grid-template-rows: auto 1fr;
     }
 
+    /* ---------------------------Side nav--------------------------- */
+
     #side-nav {
         width: 100%;
         position: static;
@@ -323,11 +339,54 @@
         overflow: visible;
     }
 
+    /* ---------------------------Header--------------------------- */
+
+    /* Change header layout */
     #header {
-        grid-template-columns: 1fr;
+        grid-template-columns: 70px 1fr 70px auto auto;
     }
 
-    #search-container {
-        width: 50%;
+    /* Make search icon visible */
+    #send-search {
+        height: var(--search-bar-height);
+        display: grid;
+        justify-content: center;
+        align-content: center;
+    }
+
+    #search-icon {
+        height: 1.5rem;
+    }
+
+    #search-bar {
+        width: 100%;
+        padding: 0 8px 0 8px;
+    }
+
+    /* Hide hamburger menu */
+    #open-side-nav {
+        display: none;
+    }
+
+    #open-notifications,
+    #open-profile-icon {
+        margin-right: 0;
+        position: relative;
+    }
+
+    #current-user-icon {
+        height: 2.5rem;
+        width: 2.5rem;
+    }
+
+    /* Make current user name visible */
+    #open-profile-name {
+        display: grid;
+        align-content: center;
+        text-decoration: none;
+        color: var(--card-heading-color);
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin: 0 20px 0 10px;
     }
 }
