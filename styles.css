@@ -339,6 +339,11 @@ body {
         grid-column: 1 / 2;
         grid-row: 1 / 3;
         overflow: visible;
+        padding-right: 40px; /* To compensate for close btn removal */
+    }
+
+    #close-btn {
+        display: none;
     }
 
     /* ---------------------------Header--------------------------- */
