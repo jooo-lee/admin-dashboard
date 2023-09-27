@@ -26,7 +26,7 @@ body {
     background-color: var(--background-color);
 }
 
-/* ------------------------------Side Nav------------------------------ */
+/* ------------------------------ Side Nav ------------------------------ */
 
 #side-nav {
     height: 100%;
@@ -46,6 +46,7 @@ body {
     color: black;
 }
 
+/* Anchor tag containing close btn */
 #side-nav a:first-child {
     width: fit-content;
     place-self: start end;
@@ -108,7 +109,7 @@ body {
     margin-bottom: 20px;
 }
 
-/* ------------------------------Header------------------------------ */
+/* ------------------------------ Header ------------------------------ */
 
 #header {
     display: grid;
@@ -182,7 +183,7 @@ body {
     width: 1.7rem;
 }
 
-/* ------------------------------Main Content------------------------------ */
+/* ------------------------------ Main Content ------------------------------ */
 
 #main-content {
     padding: 16px var(--main-content-left-padding) 16px;
@@ -201,7 +202,7 @@ body {
     box-shadow: 5px 5px 3px var(--shadow-color);
 }
 
-/* ------------------------------Projects------------------------------ */
+/* ------------------------------ Projects ------------------------------ */
 
 #project-cards {
     display: grid;
@@ -247,7 +248,7 @@ body {
     height: 1.5rem;
 }
 
-/* ------------------------------Announcements------------------------------ */
+/* ------------------------------ Announcements ------------------------------ */
 
 #announcements-card {
     border-radius: var(--square-border-radius);
@@ -285,7 +286,7 @@ body {
     font-weight: bold;
 }
 
-/* ------------------------------Trending------------------------------ */
+/* ------------------------------ Trending ------------------------------ */
 
 #trending-card {
     border-radius: var(--square-border-radius);
@@ -323,7 +324,7 @@ body {
     color: var(--card-text-color);
 }
 
-/* ------------------------------Larger Screens------------------------------ */
+/* ------------------------------ Larger Screens ------------------------------ */
 
 @media only screen and (min-width: 1000px) {
     #container {
@@ -333,7 +334,7 @@ body {
         grid-template-rows: auto 1fr;
     }
 
-    /* ---------------------------Side nav--------------------------- */
+    /* --------------------------- Side Nav --------------------------- */
 
     #side-nav {
         width: 100%;
@@ -349,7 +350,12 @@ body {
         display: none;
     }
 
-    /* ---------------------------Header--------------------------- */
+    /* Add underline to side nav text links on hover */
+    #side-nav a:nth-of-type(2n + 3):hover {
+        text-decoration: underline;
+    }
+
+    /* --------------------------- Header --------------------------- */
 
     /* Change header layout */
     #header {
@@ -369,6 +375,11 @@ body {
 
     #search-icon {
         height: 1.5rem;
+        width: var(--search-bar-height);
+    }
+
+    #search-icon:hover {
+        opacity: 60%;
     }
 
     #search-bar {
@@ -376,6 +387,14 @@ body {
         padding: 0 20px;
         background-color: var(--background-color);
         border-radius: var(--round-border-radius);
+    }
+
+    #search-bar:hover:not(:focus) {
+        filter: brightness(95%);
+    }
+
+    #search-bar:focus {
+        background-color: var(--card-background-color);
     }
 
     /* Hide hamburger menu */
@@ -387,6 +406,14 @@ body {
     #open-profile-icon {
         margin-right: 0;
         position: relative;
+    }
+
+    #open-notifications:hover {
+        opacity: 60%;
+    }
+
+    #open-profile-icon img:hover {
+        filter: brightness(105%);
     }
 
     #current-user-icon-small {
@@ -402,6 +429,10 @@ body {
         font-size: 1.2rem;
         font-weight: bold;
         margin: 0 20px 0 10px;
+    }
+
+    #open-profile-name:hover {
+        text-decoration: underline;
     }
 
     /* Make extra section visible */
@@ -452,7 +483,11 @@ body {
         cursor: pointer;
     }
 
-    /* ---------------------------Main content--------------------------- */
+    #header-btns button:hover {
+        filter: brightness(105%);
+    }
+
+    /* --------------------------- Main Content --------------------------- */
 
     #main-content {
         display: grid;
@@ -466,7 +501,7 @@ body {
         margin-bottom: 0;
     }
 
-    /* ---------------------------Projects--------------------------- */
+    /* --------------------------- Projects --------------------------- */
 
     #projects {
         grid-row: 1 / -1;
@@ -479,9 +514,48 @@ body {
         grid-auto-rows: 1fr;
     }
 
-    /* ---------------------------Trending--------------------------- */
+    /* Fixes problem where project cards grid turns into one column
+    and results in there being space between announcements card and
+    trending card */
+    @media (max-width: 1300px) {
+        #project-cards {
+            grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+        }
+    }
+
+    .project-title:hover {
+        text-decoration: underline;
+    }
+
+    .project-card-icons a:hover {
+        opacity: 60%;
+    }
+
+    /* --------------------------- Announcements --------------------------- */
+
+    .announcement-title:hover {
+        text-decoration: underline;
+    }
+
+    /* --------------------------- Trending --------------------------- */
 
     #trending {
         grid-column: 2 / 3;
+    }
+
+    #trending-card {
+        overflow: hidden; /* So background colour doesn't overflow rounded corners on hover */
+    }
+
+    .trending-section:hover {
+        background-color: var(--accent-color);
+    }
+
+    .trending-section:hover .trending-bio p:nth-child(1) {
+        color: white;
+    }
+
+    .trending-section:hover .trending-bio p:nth-last-child(1) {
+        color: rgb(232, 232, 232);
     }
 }
