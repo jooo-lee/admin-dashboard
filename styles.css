@@ -12,6 +12,7 @@
     --main-content-left-padding: 7.5vw;
     --square-border-radius: 5px;
     --round-border-radius: 20px;
+    --shadow-color: rgb(193, 193, 193);
 }
 
 * {
@@ -197,7 +198,7 @@ body {
 }
 
 .card {
-    box-shadow: 5px 5px 3px rgb(193, 193, 193);
+    box-shadow: 5px 5px 3px var(--shadow-color);
 }
 
 /* ------------------------------Projects------------------------------ */
@@ -355,6 +356,7 @@ body {
         grid-template-columns: 70px 1fr 70px auto auto;
         grid-template-rows: 1fr 2fr;
         background-color: var(--card-background-color);
+        box-shadow: 0 5px 3px var(--shadow-color);
     }
 
     /* Make search icon visible */
