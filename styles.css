@@ -205,7 +205,9 @@ body {
 #project-cards {
     display: grid;
     gap: 2rem;
-    grid-template-rows: repeat(6, 1fr);
+
+    /* Makes equal height rows, where the tallest row in the grid sets the height for all rows */
+    grid-auto-rows: 1fr;
 }
 
 .project-card {
@@ -369,7 +371,7 @@ body {
 
     #search-bar {
         width: 100%;
-        padding: 0 8px 0 8px;
+        padding: 0 20px;
         background-color: var(--background-color);
         border-radius: var(--round-border-radius);
     }
@@ -446,5 +448,38 @@ body {
         height: fit-content;
         padding: 12px 20px;
         cursor: pointer;
+    }
+
+    /* ---------------------------Main content--------------------------- */
+
+    #main-content {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: min-content min-content;
+        padding: 32px 16px;
+        gap: 16px;
+    }
+
+    .main-content-section {
+        margin-bottom: 0;
+    }
+
+    /* ---------------------------Projects--------------------------- */
+
+    #projects {
+        grid-row: 1 / -1;
+        display: grid;
+        grid-template-rows: auto 1fr;
+    }
+
+    #project-cards {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-auto-rows: 1fr;
+    }
+
+    /* ---------------------------Trending--------------------------- */
+
+    #trending {
+        grid-column: 2 / 3;
     }
 }
