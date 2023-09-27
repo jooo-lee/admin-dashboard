@@ -6,13 +6,15 @@
     --card-background-color: white;
     --card-heading-color: black;
     --card-text-color: #636363;
+    --hover-text-main-color: white;
+    --hover-text-secondary-color: rgb(232, 232, 232);
+    --shadow-color: rgb(193, 193, 193);
 
     --header-top-padding: 20px;
     --search-bar-height: 2.5rem;
     --main-content-left-padding: 7.5vw;
     --square-border-radius: 5px;
     --round-border-radius: 20px;
-    --shadow-color: rgb(193, 193, 193);
 }
 
 * {
@@ -252,39 +254,24 @@ body {
 
 #announcements-card {
     border-radius: var(--square-border-radius);
-    padding: 15px 20px;
     background-color: var(--card-background-color);
-    color: var(--card-text-color);
-}
-
-/* Add lines between announcements */
-#announcements-card div:nth-child(2) {
-    border-top: 1px solid #000;
-    border-bottom: 1px solid #000;
+    overflow: hidden; /* So background colour doesn't overflow rounded corners on hover */
 }
 
 .announcement-section {
-    padding: 15px 0;
+    display: block;
+    padding: 15px 20px;
+    color: var(--card-text-color);
+    text-decoration: none;
 }
 
 .announcement-title {
     font-size: 1.1rem;
-
-    /* Since anchor tags are inline elements,
-    we need to change its display to
-    block so that we can adjust its margins.
-    Then we need to adjust its width so that
-    it fits the content, since the block element
-    will expand to the full width of its parent
-    container */
-    display: block;
+    font-weight: bold;
+    color: var(--card-heading-color);
     margin-bottom: 10px;
     width: fit-content;
-
-    color: var(--card-heading-color);
-    text-decoration: none;
-    font-weight: bold;
-}
+} 
 
 /* ------------------------------ Trending ------------------------------ */
 
@@ -360,6 +347,18 @@ body {
 
     /* ------------------------ Announcements ------------------------ */
 
+    .announcement-section:hover {
+        background-color: var(--accent-color);
+    }
+
+    .announcement-section:hover .announcement-title {
+        color: var(--hover-text-main-color);
+    }
+
+    .announcement-section:hover .announcement-content {
+        color: var(--hover-text-secondary-color);
+    }
+
     .announcement-title:hover {
         text-decoration: underline;
     }
@@ -371,11 +370,11 @@ body {
     }
 
     .trending-section:hover .trending-bio p:nth-child(1) {
-        color: white;
+        color: var(--hover-text-main-color);
     }
     
     .trending-section:hover .trending-bio p:nth-last-child(1) {
-        color: rgb(232, 232, 232);
+        color: var(--hover-text-secondary-color);
     }
 }
 
