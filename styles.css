@@ -291,6 +291,7 @@ body {
 #trending-card {
     border-radius: var(--square-border-radius);
     background-color: var(--card-background-color);
+    overflow: hidden; /* So background colour doesn't overflow rounded corners on hover */
 }
 
 .trending-section {
@@ -324,6 +325,60 @@ body {
     color: var(--card-text-color);
 }
 
+/* ------------------------------ Hover Effects ------------------------------ */
+
+/* Solve sticky hover states for mobile devices */
+@media (hover: hover) {
+
+    /* ------------------------ Side Nav ------------------------ */
+
+    /* Add underline to side nav text links on hover */
+    #side-nav a:nth-of-type(2n + 3):hover {
+        text-decoration: underline;
+    }
+
+    /* ------------------------ Header ------------------------ */
+
+    #open-side-nav:hover,
+    #open-notifications:hover {
+        opacity: 60%;
+    }
+
+    #open-profile-icon img:hover {
+        filter: brightness(105%);
+    }
+
+    /* ------------------------ Projects ------------------------ */
+
+    .project-title:hover {
+        text-decoration: underline;
+    }
+
+    .project-card-icons a:hover {
+        opacity: 60%;
+    }
+
+    /* ------------------------ Announcements ------------------------ */
+
+    .announcement-title:hover {
+        text-decoration: underline;
+    }
+
+    /* -------------------------- Trending -------------------------- */
+
+    .trending-section:hover {
+        background-color: var(--accent-color);
+    }
+
+    .trending-section:hover .trending-bio p:nth-child(1) {
+        color: white;
+    }
+    
+    .trending-section:hover .trending-bio p:nth-last-child(1) {
+        color: rgb(232, 232, 232);
+    }
+}
+
 /* ------------------------------ Larger Screens ------------------------------ */
 
 @media only screen and (min-width: 1000px) {
@@ -348,11 +403,6 @@ body {
 
     #close-btn {
         display: none;
-    }
-
-    /* Add underline to side nav text links on hover */
-    #side-nav a:nth-of-type(2n + 3):hover {
-        text-decoration: underline;
     }
 
     /* --------------------------- Header --------------------------- */
@@ -406,14 +456,6 @@ body {
     #open-profile-icon {
         margin-right: 0;
         position: relative;
-    }
-
-    #open-notifications:hover {
-        opacity: 60%;
-    }
-
-    #open-profile-icon img:hover {
-        filter: brightness(105%);
     }
 
     #current-user-icon-small {
@@ -514,7 +556,7 @@ body {
         grid-auto-rows: 1fr;
     }
 
-    /* Fixes problem where project cards grid turns into one column
+    /* Fix problem where project cards grid turns into one column
     and results in there being space between announcements card and
     trending card */
     @media (max-width: 1300px) {
@@ -523,39 +565,9 @@ body {
         }
     }
 
-    .project-title:hover {
-        text-decoration: underline;
-    }
-
-    .project-card-icons a:hover {
-        opacity: 60%;
-    }
-
-    /* --------------------------- Announcements --------------------------- */
-
-    .announcement-title:hover {
-        text-decoration: underline;
-    }
-
     /* --------------------------- Trending --------------------------- */
 
     #trending {
         grid-column: 2 / 3;
-    }
-
-    #trending-card {
-        overflow: hidden; /* So background colour doesn't overflow rounded corners on hover */
-    }
-
-    .trending-section:hover {
-        background-color: var(--accent-color);
-    }
-
-    .trending-section:hover .trending-bio p:nth-child(1) {
-        color: white;
-    }
-
-    .trending-section:hover .trending-bio p:nth-last-child(1) {
-        color: rgb(232, 232, 232);
     }
 }
