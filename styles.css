@@ -314,7 +314,7 @@ body {
 
 /* ------------------------------ Hover Effects ------------------------------ */
 
-/* Solve sticky hover states for mobile devices */
+/* Solve sticky hover states for touch screen devices */
 @media (hover: hover) {
 
     /* ------------------------ Side Nav ------------------------ */
